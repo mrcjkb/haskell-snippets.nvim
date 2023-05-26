@@ -6,6 +6,6 @@ pkgs.writeShellApplication {
   ];
   text = ''
     mkdir -p doc
-    lemmy-help lua/haskell-snippets/init.lua > doc/haskell-snippets.txt
+    lemmy-help lua/haskell-snippets/{init,pragmas,module,data,functions,expressions,quasiquotes}.lua > doc/haskell-snippets.txt
   '';
 }

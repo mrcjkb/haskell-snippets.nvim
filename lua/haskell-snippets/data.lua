@@ -1,13 +1,18 @@
 ---@mod haskell-snippets.data
 
 ---@brief [[
-
----WARNING: This is not part of the public API.
----Breaking changes to this module will not be reflected in the semantic versioning of this plugin.
-
 --- Snippets related to data
 ---@brief ]]
 
+---@class DataSnippetCollection
+---@field adt Snippet Algebraic data type
+---@field newtype Snippet newtype
+---@field rec Snippet Record
+---@field cls Snippet Typeclass
+---@field ins Snippet Typeclass instance
+---@field constraint Snippet Typeclass constraint
+
+---@type DataSnippetCollection
 local data = {
   all = {},
 }
@@ -39,7 +44,6 @@ adt_constructor_choice = function()
   })
 end
 
---- Algebraic data type
 data.adt = s({
   trig = 'adt',
   dscr = 'Algebraic data type',
@@ -67,7 +71,6 @@ data.adt = s({
 })
 table.insert(data.all, data.adt)
 
---- newtype
 data.newtype = s({
   trig = 'new',
   dscr = 'newtype',
@@ -110,7 +113,6 @@ record_field_choice = function()
   })
 end
 
---- Record
 data.rec = s({
   trig = 'rec',
   dscr = 'Record',
@@ -156,7 +158,6 @@ data.rec = s({
 })
 table.insert(data.all, data.rec)
 
---- Typeclass
 data.cls = s({
   trig = 'cls',
   dscr = 'Typeclass',
@@ -170,7 +171,6 @@ data.cls = s({
 })
 table.insert(data.all, data.cls)
 
---- Typeclass instance
 data.ins = s({
   trig = 'ins',
   dscr = 'Typeclass instance',
@@ -186,7 +186,6 @@ data.ins = s({
 })
 table.insert(data.all, data.ins)
 
---- Typeclass constraint
 data.constraint = s({
   trig = '=>',
   descr = 'Typeclass constraint',

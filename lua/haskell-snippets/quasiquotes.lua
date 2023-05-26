@@ -1,13 +1,14 @@
 ---@mod haskell-snippets.quasiqotes
 
 ---@brief [[
-
----WARNING: This is not part of the public API.
----Breaking changes to this module will not be reflected in the semantic versioning of this plugin.
-
 --- Snippets related to quasiqotes
 ---@brief ]]
 
+---@class QuasiQuoteSnippetCollection
+---@field qq Snippet QuasiQuote
+---@field sql Snippet postgres-simple [sql||] QuasiQuote
+
+---@type QuasiQuoteSnippetCollection
 local quasiquotes = {
   all = {},
 }
@@ -20,7 +21,6 @@ local dynamic = ls.dynamic_node
 
 local util = require('haskell-snippets.util')
 
---- QuasiQuote
 quasiquotes.qq = s({
   trig = 'qq',
   dscr = 'QuasiQuote',
@@ -34,7 +34,6 @@ quasiquotes.qq = s({
 })
 table.insert(quasiquotes.all, quasiquotes.qq)
 
---- postgres-simple [sql||] QuasiQuote
 quasiquotes.sql = s({
   trig = 'sql',
   dscr = 'postgres-simple sql QuasiQuote',

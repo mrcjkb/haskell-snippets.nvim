@@ -1,13 +1,16 @@
 ---@mod haskell-snippets.pragmas
 
 ---@brief [[
-
----WARNING: This is not part of the public API.
----Breaking changes to this module will not be reflected in the semantic versioning of this plugin.
-
 --- Snippets related to pragmas
 ---@brief ]]
 
+---@class PragmaSnippetCollection
+---@field prag Snippet Compiler pragma
+---@field lang Snippet Language pragma
+---@field discover Snippet Hspec/Sydtest discover GHC option
+---@field nowarn Snippet GHC option
+
+---@type PragmaSnippetCollection
 local pragmas = {
   all = {},
 }
@@ -19,7 +22,6 @@ local text = ls.text_node
 local insert = ls.insert_node
 local choice = ls.choice_node
 
---- Compiler pragma
 pragmas.prag = s({
   trig = 'prag',
   dscr = 'Compiler pragma',
@@ -64,7 +66,6 @@ pragmas.prag = s({
 })
 table.insert(pragmas.all, pragmas.prag)
 
---- Language pragma
 pragmas.lang = s({
   trig = 'lang',
   dscr = 'LANGUAGE pragma',
@@ -89,7 +90,6 @@ pragmas.lang = s({
 })
 table.insert(pragmas.all, pragmas.lang)
 
---- Hspec/Sydtest discover GHC option
 pragmas.discover = s({
   trig = 'discover',
   dscr = 'hspec/sydtest discover GHC option',
@@ -105,7 +105,6 @@ pragmas.discover = s({
 })
 table.insert(pragmas.all, pragmas.discover)
 
---- nowarn GHC option
 pragmas.nowarn = s({
   trig = 'nowarn',
   dscr = 'GHC option to disable warnings',

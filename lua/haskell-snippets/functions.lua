@@ -1,13 +1,15 @@
 ---@mod haskell-snippets.function
 
 ---@brief [[
-
----WARNING: This is not part of the public API.
----Breaking changes to this module will not be reflected in the semantic versioning of this plugin.
-
 --- Snippets related to functions
 ---@brief ]]
 
+---@class FunctionSnippetCollection
+---@field fun Snippet Function and type signature
+---@field func Snippet Function and type signature (multi-line)
+---@field lambda Snippet Lambda
+
+---@type FunctionSnippetCollection
 local functions = {
   all = {},
 }
@@ -79,7 +81,6 @@ local function build_multi_line_function_snippet(...)
   return build_function_snippet(true, ...)
 end
 
---- Function and type signature
 functions.fun = s({
   trig = 'fn',
   dscr = 'Function and type signature',
@@ -90,7 +91,6 @@ functions.fun = s({
 })
 table.insert(functions.all, functions.fun)
 
---- Function and type signature (multi-line)
 functions.func = s({
   trig = 'func',
   dscr = 'Function and type signature (multi-line)',
@@ -103,7 +103,6 @@ functions.func = s({
 })
 table.insert(functions.all, functions.func)
 
---- Lambda
 functions.lambda = s({
   trig = '\\',
   dscr = 'Lambda',

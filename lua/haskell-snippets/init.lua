@@ -2,8 +2,21 @@
 
 ---@brief [[
 --- Collection of LuaSnip snippets for Haskell.
+---
+--- To add the snippets to LuaSnip:
+--->
+---local ls = require('luasnip')
+---ls.setup {
+---  -- Add your LuaSnip config
+---}
+---local haskell_snippets = require('haskell-snippets').all
+---ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
+---<
 ---@brief ]]
 
+---@alias Snippet table
+
+---@class HaskellSnippetCollection
 local hs = {
   all = {},
 }

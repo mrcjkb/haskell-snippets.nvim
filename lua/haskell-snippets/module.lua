@@ -1,13 +1,14 @@
 ---@mod haskell-snippets.module
 
 ---@brief [[
-
----WARNING: This is not part of the public API.
----Breaking changes to this module will not be reflected in the semantic versioning of this plugin.
-
 --- Snippets related to modules
 ---@brief ]]
 
+---@class ModuleSnippetCollection
+---@field mod Snippet Module declaration
+---@field qual Snippet Qualified import
+
+---@type ModuleSnippetCollection
 local module = {
   all = {},
 }
@@ -37,7 +38,6 @@ local function get_module_name_node()
   return sn(nil, { insert(1) })
 end
 
---- Module declaration
 module.mod = s({
   trig = 'mod',
   dscr = 'Module declaration',
@@ -99,7 +99,6 @@ local function get_qualified_name_node(args)
   })
 end
 
---- Qualified import
 module.qual = s({
   trig = 'qual',
   dscr = 'Qualified import',
