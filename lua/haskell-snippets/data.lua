@@ -1,4 +1,4 @@
----@mod haskell-snippets.data
+---@mod haskell-snippets.datadat
 
 ---@brief [[
 --- Snippets related to data
@@ -97,16 +97,19 @@ local record_field_choice
 record_field_choice = function()
   return sn(nil, {
     choice(1, {
-      dynamic(1, function()
-        return sn(nil, { text { '', util.indent_str() .. '}' } })
-      end),
       sn(nil, {
-        dynamic(1, function()
+        insert(1),
+        dynamic(2, function()
+          return sn(nil, { text { '', util.indent_str() .. '}' } })
+        end),
+      }),
+      sn(nil, {
+        insert(1),
+        dynamic(2, function()
           return sn(nil, { text { '', util.indent_str() .. ', ' } })
         end),
-        insert(2),
-        text(' :: '),
         insert(3),
+        text(' :: '),
         dynamic(4, record_field_choice),
       }),
     }),
@@ -137,9 +140,8 @@ data.rec = s({
   end),
   insert(5),
   text(' :: '),
-  insert(6),
-  dynamic(7, record_field_choice),
-  choice(8, {
+  dynamic(6, record_field_choice),
+  choice(7, {
     text(''),
     sn(nil, {
       dynamic(1, function()
