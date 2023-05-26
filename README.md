@@ -9,7 +9,8 @@
   </p>
   <p>
     <strong>
-      My collection of Haskell snippets for <a href="https://github.com/L3MON4D3/LuaSnip">LuaSnip</a>
+      My collection of Haskell snippets for <a href="https://github.com/L3MON4D3/LuaSnip">LuaSnip</a>.
+      Powered by <a href="https://github.com/nvim-treesitter/nvim-treesitter">tree-sitter</a> and LSP.
     </strong>
   </p>
   <h2>🦥</h>
