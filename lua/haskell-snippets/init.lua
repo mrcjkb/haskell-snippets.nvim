@@ -1,3 +1,9 @@
+---@mod haskell-snippets
+
+---@brief [[
+--- Collection of LuaSnip snippets for Haskell.
+---@brief ]]
+
 local hs = {
   all = {},
 }

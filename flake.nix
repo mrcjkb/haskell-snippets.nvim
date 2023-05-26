@@ -66,6 +66,8 @@
         ];
       };
 
+      docgen = pkgs.callPackage ./nix/docgen.nix {};
+
       pre-commit-check = pre-commit-hooks.lib.${system}.run {
         src = self;
         hooks = {
@@ -92,7 +94,11 @@
 
       packages = rec {
         default = nvim-plugin;
-        inherit (pkgs) nvim-plugin;
+        inherit docgen;
+        inherit
+          (pkgs)
+          nvim-plugin
+          ;
       };
 
       checks = {
