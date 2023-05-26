@@ -12,6 +12,8 @@ with final.stdenv; let
     src = plenary-nvim;
   };
 
+  nvim-treesitter-plugin = final.pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [p.haskell]);
+
   mkPlenaryTest = {
     name,
     nvim ? final.neovim-unwrapped,
@@ -25,10 +27,11 @@ with final.stdenv; let
           EOF
         '';
         packages.myVimPackage = {
-          start = [
+          start = with final.pkgs.vimPlugins; [
             final.nvim-plugin
             plenary-plugin
-            # Add plugin dependencies here
+            luasnip
+            nvim-treesitter-plugin
           ];
         };
       };

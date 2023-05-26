@@ -1,51 +1,55 @@
-# An opinionated Neovim Lua plugin template with a Nix CI
+<!-- markdownlint-disable -->
+<br />
+<div align="center">
+  <a href="https://github.com/mrcjkb/haskell-snippets.nvim">
+    <img src="./logo.svg" alt="haskell-snippets.nvim">
+  </a>
+  <p align="center">
+    <a href="https://github.com/mrcjkb/haskell-tools.nvim/issues">Report Bug</a>
+  </p>
+  <p>
+    <strong>
+      My collection of Haskell snippets for <a href="https://github.com/L3MON4D3/LuaSnip">LuaSnip</a>
+    </strong>
+  </p>
+  <h2>🦥</h>
+</div>
+<!-- markdownlint-restore -->
 
-![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
-![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
-![Nix](https://img.shields.io/badge/nix-0175C2?style=for-the-badge&logo=NixOS&logoColor=white)
+[![Neovim][neovim-shield]][neovim-url]
+[![Lua][lua-shield]][lua-url]
+[![Haskell][haskell-shield]][haskell-url]
+[![Nix][nix-shield]][nix-url]
 
-This repository is a template for Neovim plugins written in Lua.
+[![GPL2 License][license-shield]][license-url]
+[![Issues][issues-shield]][issues-url]
+[![Build Status][ci-shield]][ci-url]
 
-## Features
+## Snippets
 
-- GitHub Actions workflows with a locally reproducible CI,
-using [`nix` flakes](https://nixos.wiki/wiki/Flakes).
-- Run tests with both neovim stable and neovim nightly.
-- Lints and a nix shell with pre-commit-hooks:
-  - [`luacheck`](https://github.com/mpeterv/luacheck)
-  - [`stylua`](https://github.com/JohnnyMorganz/StyLua)
-  - [`alejandra`](https://github.com/kamadorueda/alejandra)
-  - [`editorconfig-checker`](https://github.com/editorconfig-checker/editorconfig-checker)
-  - [`markdownlint`](https://github.com/DavidAnson/markdownlint)
-- `vimPlugin` nix flake output.
-- Automatically publish tags to [LuaRocks](https://luarocks.org/labels/neovim)
-with the [luarocks-tag-release action](https://github.com/nvim-neorocks/luarocks-tag-release).
+- [ ] TODO
 
 ## Setup
 
-1. Click on [Use this template](https://github.com/MrcJkb/nvim-lua-nix-plugin-template/generate)
-to start a repo based on this template. **Do _not_ fork it**.
-2. If your plugin depends on other plugins,
-add them to [`nvim-wrapped` in the `ci-overlay.nix`](./nix/ci-overlay.nix).
-3. Add the name of your plugin to [`flake.nix`](./flake.nix).
-4. Add [`plenary.nvim`](https://github.com/nvim-lua/plenary.nvim) specs
-to the `tests` directory.
-5. Create a [LuaRocks API key](https://luarocks.org/settings/api-keys).
-6. Add the API key to the repository's
-[GitHub Actions secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+- [ ] TODO
 
 ## Contributing
 
 All contributions are welcome!
 See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-## License
-
-This template is [licensed according to GPL version 2](./LICENSE),
-with the following exception:
-
-The license applies only to the Nix CI infrastructure provided by this template
-repository, including any modifications made to the infrastructure.
-Any software that uses or is derived from this template may be licensed under any
-[OSI approved open source license](https://opensource.org/licenses/),
-without being subject to the GPL version 2 license of this template.
+<!-- MARKDOWN LNIKS & IMAGES -->
+[neovim-shield]: https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white
+[neovim-url]: https://neovim.io/
+[lua-shield]: https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white
+[lua-url]: https://www.lua.org/
+[nix-shield]: https://img.shields.io/badge/nix-0175C2?style=for-the-badge&logo=NixOS&logoColor=white
+[nix-url]: https://nixos.org/
+[haskell-shield]: https://img.shields.io/badge/Haskell-5e5086?style=for-the-badge&logo=haskell&logoColor=white
+[haskell-url]: https://www.haskell.org/
+[issues-shield]: https://img.shields.io/github/issues/mrcjkb/haskell-snippets.nvim.svg?style=for-the-badge
+[issues-url]: https://github.com/mrcjkb/haskell-snippets.nvim/issues
+[license-shield]: https://img.shields.io/github/license/mrcjkb/haskell-snippets.nvim.svg?style=for-the-badge
+[license-url]: https://github.com/mrcjkb/haskell-snippets.nvim/blob/master/LICENSE
+[ci-shield]: https://img.shields.io/github/actions/workflow/status/mrcjkb/haskell-snippets.nvim/nix-build.yml?style=for-the-badge
+[ci-url]: https://github.com/mrcjkb/haskell-snippets.nvim/actions/workflows/nix-build.yml

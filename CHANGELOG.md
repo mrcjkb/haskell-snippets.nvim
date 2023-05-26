@@ -8,27 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
-
-- Loosen license restrictions to allow any OSI approved open source derivations.
-
-### Added
-
-- More pre-commit-hooks and linters.
-- `luarocks-tag-release` workflow.
-
-### Changed
-
-- Remove `cachix-action` from workflow.
-
-## [2.0.0] - 2023-01-02
-
-### Changed
-
-- Replace `nixpkgs-fmt` with `alejandra`.
-
-## [1.0.0] - 2022-10-20
-
 ### Added
 
 - Initial release

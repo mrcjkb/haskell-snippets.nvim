@@ -337,12 +337,3 @@ proprietary programs.  If your program is a subroutine library, you may
 consider it more useful to permit linking proprietary applications with the
 library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.
-
-
-          GPL LICENSE EXCEPTION FOR DERIVED OPEN SOURCE SOFTWARE
-
-The GPL version 2 license applies only to the Nix CI infrastructure provided
-by this template repository, including any modifications made to the infrastructure.
-Any software that uses or is derived from this template may be licensed under any
-OSI approved open source license, without being subject to the GPL version 2 license
-of the infrastructure.

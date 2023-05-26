@@ -1,5 +1,5 @@
 {
-  description = "Neovim Nix flake CI template for GitHub Actions"; # TODO: Set description
+  description = "My collection of Haskell snippets for LuaSnip";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -36,7 +36,7 @@
     plenary-nvim,
     ...
   }: let
-    name = "plugin-template.nvim"; # TODO: Choose a name
+    name = "haskell-snippets.nvim";
 
     supportedSystems = [
       "aarch64-linux"
@@ -78,7 +78,7 @@
       };
 
       devShell = pkgs.mkShell {
-        name = "devShell"; # TODO: Choose a name
+        name = "haskell-snippets-devShell";
         inherit (pre-commit-check) shellHook;
         buildInputs = with pkgs; [
           zlib
