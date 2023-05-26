@@ -71,7 +71,9 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 ## Snippets
 
-- [ ] TODO
+### `haskell-snippets.pragmas.prag`
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/88918b83-c8aa-4fb0-b74c-a24b5a9269a6)
 
 ## Contributing
 
