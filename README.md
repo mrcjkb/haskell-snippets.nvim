@@ -5,7 +5,7 @@
     <img src="./logo.svg" alt="haskell-snippets.nvim">
   </a>
   <p align="center">
-    <a href="https://github.com/mrcjkb/haskell-tools.nvim/issues">Report Bug</a>
+    <a href="https://github.com/mrcjkb/haskell-snippets.nvim/issues">Report Bug</a>
   </p>
   <p>
     <strong>
