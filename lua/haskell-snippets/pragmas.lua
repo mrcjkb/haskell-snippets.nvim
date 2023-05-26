@@ -21,6 +21,9 @@ local sn = ls.snippet_node
 local text = ls.text_node
 local insert = ls.insert_node
 local choice = ls.choice_node
+local dynamic = ls.dynamic_node
+
+local util = require('haskell-snippets.util')
 
 pragmas.prag = s({
   trig = 'prag',
@@ -90,6 +93,18 @@ pragmas.lang = s({
 })
 table.insert(pragmas.all, pragmas.lang)
 
+local function get_module_name()
+  local module_name = util.lsp_get_module_name()
+  if module_name then
+    return sn(nil, {
+      insert(1, module_name),
+    })
+  end
+  return sn(nil, {
+    insert(1, 'Spec'),
+  })
+end
+
 pragmas.discover = s({
   trig = 'discover',
   dscr = 'hspec/sydtest discover GHC option',
@@ -100,7 +115,7 @@ pragmas.discover = s({
     text('sydtest'),
   }),
   text('-discover -optF --module-name='),
-  insert(2, 'Spec'),
+  dynamic(2, get_module_name),
   text(' #-}'),
 })
 table.insert(pragmas.all, pragmas.discover)

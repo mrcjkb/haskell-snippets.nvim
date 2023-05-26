@@ -66,4 +66,16 @@ function util.indent_newline_insert(txt, extra_indent)
   end
 end
 
+---@return string|nil
+function util.lsp_get_module_name()
+  if #vim.lsp.get_active_clients { bufnr = 0 } > 0 then
+    for _, lens in pairs(vim.lsp.codelens.get(0)) do
+      local name = lens.command.title:match('module (.*) where')
+      if name then
+        return name
+      end
+    end
+  end
+end
+
 return util

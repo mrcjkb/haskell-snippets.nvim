@@ -27,13 +27,9 @@ local has_treesitter, parsers = pcall(require, 'nvim-treesitter.parsers')
 local hs_lang = has_treesitter and parsers.ft_to_lang('haskell')
 
 local function get_module_name_node()
-  if #vim.lsp.get_active_clients { bufnr = 0 } > 0 then
-    for _, lens in pairs(vim.lsp.codelens.get(0)) do
-      local name = lens.command.title:match('module (.*) where')
-      if name then
-        return sn(nil, { text(name) })
-      end
-    end
+  local module_name = util.lsp_get_module_name()
+  if module_name then
+    return sn(nil, { text(module_name) })
   end
   return sn(nil, { insert(1) })
 end
