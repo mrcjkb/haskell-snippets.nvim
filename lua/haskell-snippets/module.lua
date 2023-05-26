@@ -22,7 +22,8 @@ local insert = ls.insert_node
 local choice = ls.choice_node
 local dynamic = ls.dynamic_node
 
-local hs_lang = require('nvim-treesitter.parsers').ft_to_lang('haskell')
+local has_treesitter, parsers = pcall(require, 'nvim-treesitter.parsers')
+local hs_lang = has_treesitter and parsers.ft_to_lang('haskell')
 
 local function get_module_name_node()
   if #vim.lsp.get_active_clients { bufnr = 0 } > 0 then
@@ -79,16 +80,18 @@ local function get_qualified_name_node(args)
     return sn(nil, { text('') })
   end
   local import_stmt = 'import qualified ' .. module_name
-  local module_query = vim.treesitter.query.parse(hs_lang, '(module) @mod')
-  local lang_tree = vim.treesitter.get_string_parser(import_stmt, hs_lang, { injections = { [hs_lang] = '' } })
-  local root = fast_parse(lang_tree):root()
   local choices = { insert(1) }
-  ---@diagnostic disable-next-line
-  for _, match in module_query:iter_matches(root, import_stmt) do
-    for _, node in ipairs(match) do
-      local txt = vim.treesitter.get_node_text(node, import_stmt)
-      table.insert(choices, 1, text(txt:sub(1, 1)))
-      table.insert(choices, 1, text(txt))
+  if hs_lang then
+    local module_query = vim.treesitter.query.parse(hs_lang, '(module) @mod')
+    local lang_tree = vim.treesitter.get_string_parser(import_stmt, hs_lang, { injections = { [hs_lang] = '' } })
+    local root = fast_parse(lang_tree):root()
+    ---@diagnostic disable-next-line
+    for _, match in module_query:iter_matches(root, import_stmt) do
+      for _, node in ipairs(match) do
+        local txt = vim.treesitter.get_node_text(node, import_stmt)
+        table.insert(choices, 1, text(txt:sub(1, 1)))
+        table.insert(choices, 1, text(txt))
+      end
     end
   end
   return sn(nil, {
