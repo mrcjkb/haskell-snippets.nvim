@@ -161,8 +161,7 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 #### `haskell-snippets.functions.fn`
 
 - Trigger: `fn`
-
-![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/3fa9f308-6b87-4b45-8b78-1d214237d54e)
+- [ ] TODO: Add gif
 
 #### `haskell-snippets.functions.func`
 
