@@ -225,6 +225,8 @@ Here are some other plugins I recommend for Haskell development:
 
 - [mrcjkb/haskell-tools.nvim](https://github.com/mrcjkb/haskell-tools.nvim):
   Toolset to improve the Haskell experience in Neovim.
+- [neotest-haskell](https://github.com/MrcJkb/neotest-haskell):
+  Interact with tests in neovim.
 - [luc-tielen/telescope_hoogle](https://github.com/luc-tielen/telescope_hoogle):
   Hoogle search.
 
