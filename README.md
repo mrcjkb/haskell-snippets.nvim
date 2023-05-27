@@ -161,17 +161,20 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 #### `haskell-snippets.functions.fn`
 
 - Trigger: `fn`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/d5d7f76a-0ba0-4696-825e-9908f32dbe84)
 
 #### `haskell-snippets.functions.func`
 
 - Trigger: `func`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/b399c7a7-684f-4af6-8ed9-bbf3fbd0119a)
 
 #### `haskell-snippets.functions.lambda`
 
 - Trigger: `\`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/113a9e36-01c3-4ff7-8686-3f8e9560b44a)
 
 ### Expressions
 
