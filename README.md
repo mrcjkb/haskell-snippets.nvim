@@ -181,34 +181,38 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 #### `haskell-snippets.expressions.if_expr`
 
 - Trigger: `if`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/a4f67a0b-3151-41e3-819d-7815d4253479)
 
 #### `haskell-snippets.expressions.if_expr_multiline`
 
 - Trigger: `iff`
-- [ ] TODO: Add gif
 
-#### `haskell-snippets.expressions.case`
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/e450802a-756f-4882-8125-05994e48457c)
 
 - Trigger: `case`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/8d0fbfeb-00c2-4644-b7a4-9d5993a852ea)
 
 #### `haskell-snippets.expressions.lambdacase`
 
 - Trigger: `\case`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/629670c7-93a7-4c34-a431-9eee55092d6a)
 
 ### QuasiQuotes
 
 #### `haskell-snippets.quasiquotes.qq`
 
 - Trigger: `qq`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/5571f27f-632b-41c2-ab28-d3c3f6116797)
 
 #### `haskell-snippets.quasiquotes.sql`
 
 - Trigger: `sql`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/92b3ba4e-84dd-44ca-b20d-483acd04df6d)
 
 ## Contributing
 
