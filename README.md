@@ -73,8 +73,10 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 > **Note**
 >
-> The recording software [ttyrec](https://github.com/mjording/ttyrec)
-> sometimes has some visual glitches.
+> - The recording software [ttyrec](https://github.com/mjording/ttyrec)
+>   sometimes has some visual glitches.
+> - Many snippets provided by this plugin use [choice nodes](https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#choicenode)
+>   recursively.
 
 ### Pragmas
 
@@ -159,7 +161,8 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 #### `haskell-snippets.functions.fun`
 
 - Trigger: `fn`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/3fa9f308-6b87-4b45-8b78-1d214237d54e)
 
 #### `haskell-snippets.functions.func`
 
