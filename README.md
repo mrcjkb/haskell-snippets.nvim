@@ -206,7 +206,7 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 - Trigger: `qq`
 
-![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/5571f27f-632b-41c2-ab28-d3c3f6116797)
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/e87845aa-f786-4704-9426-bbac71b3d04d)
 
 #### `haskell-snippets.quasiquotes.sql`
 
