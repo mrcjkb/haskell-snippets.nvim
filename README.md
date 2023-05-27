@@ -158,7 +158,7 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 ### Functions
 
-#### `haskell-snippets.functions.fun`
+#### `haskell-snippets.functions.fn`
 
 - Trigger: `fn`
 
