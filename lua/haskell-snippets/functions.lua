@@ -81,7 +81,7 @@ local function build_multi_line_function_snippet(...)
   return build_function_snippet(true, ...)
 end
 
-functions.fun = s({
+functions.fn = s({
   trig = 'fn',
   dscr = 'Function and type signature',
 }, {
@@ -89,7 +89,7 @@ functions.fun = s({
   text(' :: '),
   dynamic(2, build_single_line_function_snippet, { 1 }),
 })
-table.insert(functions.all, functions.fun)
+table.insert(functions.all, functions.fn)
 
 functions.func = s({
   trig = 'func',

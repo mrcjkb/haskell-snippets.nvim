@@ -145,18 +145,20 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 #### `haskell-snippets.data.ins`
 
 - Trigger: `ins`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/60ab78d6-62f6-4b8a-97f3-6c211d4333dd)
 
 #### `haskell-snippets.data.constraint`
 
 - Trigger: `=>`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/018d0044-ae47-416d-9989-43faf3d1e2e1)
 
 ### Functions
 
 #### `haskell-snippets.functions.fun`
 
-- Trigger: `fun`
+- Trigger: `fn`
 - [ ] TODO: Add gif
 
 #### `haskell-snippets.functions.func`

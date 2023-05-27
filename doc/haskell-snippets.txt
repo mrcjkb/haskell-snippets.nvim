@@ -49,7 +49,7 @@ ModuleSnippetCollection                                *ModuleSnippetCollection*
 
 
 ==============================================================================
-                                                         *haskell-snippets.data*
+                                                      *haskell-snippets.datadat*
 
  Snippets related to data
 
