@@ -139,7 +139,8 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 #### `haskell-snippets.data.cls`
 
 - Trigger: `cls`
-- [ ] TODO: Add gif
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/1b386334-cf42-4989-a876-45b7fb529a66)
 
 #### `haskell-snippets.data.ins`
 
