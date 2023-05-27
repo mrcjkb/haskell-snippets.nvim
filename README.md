@@ -88,19 +88,19 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 - Trigger: `lang`
 
-![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/18bf238a-ea23-4206-97ab-421a7896bfd2)
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/31a6f298-c2c3-4526-a1bf-430a91ee9911)
 
 #### `haskell-snippets.pragmas.discover`
 
 - Trigger: `discover`
 
-![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/d80c6209-f324-4a1c-ae3c-9e4f1245a113)
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/0a5cabc3-1e58-48ff-9ac0-4abea61484ee)
 
 #### `haskell-snippets.pragmas.nowarn`
 
 - Trigger: `nowarn`
 
-![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/ba95a3cd-fc68-4adb-9011-82e39ffc742c)
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/3ded002b-9f8f-4a9e-9d9d-587a9187af62)
 
 ### Module and imports
 
@@ -108,13 +108,13 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 - Trigger: `mod`
 
-![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/ade2cb77-10de-4183-bded-163caf3cc8f7)
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/173bae48-39ba-4cc8-a5aa-24a41fb34bef)
 
 #### `haskell-snippets.module.qual`
 
 - Trigger: `qual`
 
-![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/2fbd5f6d-2c8b-4f8c-b1f1-39bc4bd8f549)
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/c62eac49-e06c-4ed9-9a9c-b987c1ad498c)
 
 ### Data and typeclasses
 
@@ -122,19 +122,19 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 - Trigger: `adt`
 
-![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/6a4fbc24-ab83-440a-971b-5d7373f52ce0)
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/668115de-5a2c-4ed8-b962-badf39337d99)
 
 #### `haskell-snippets.data.newtype`
 
 - Trigger: `new`
 
-![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/769459ed-6149-4f84-bd97-60570749938f)
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/69632453-eae2-49a4-8f21-d13276510aba)
 
 #### `haskell-snippets.data.rec`
 
 - Trigger: `rec`
 
-![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/e633ee97-48ad-462e-949f-8c140f7bd086)
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/dbe341b7-8af4-49c4-a41f-362341dd9248)
 
 #### `haskell-snippets.data.cls`
 
