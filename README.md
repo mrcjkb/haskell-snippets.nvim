@@ -82,7 +82,7 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 - Trigger: `prag`
 
-![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/88918b83-c8aa-4fb0-b74c-a24b5a9269a6)
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/ced58a75-ce1a-4a74-8d1f-8d715d68d81a)
 
 #### `haskell-snippets.pragmas.lang`
 
