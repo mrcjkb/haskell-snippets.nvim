@@ -78,7 +78,7 @@ pragmas.lang = s({
     insert(1),
     text('ScopedTypeVariables'),
     text('RecordWildCards'),
-    text('LamdaCase'),
+    text('LambdaCase'),
     text('QuasiQuotes'),
     text('ViewPatterns'),
     text('DerivingVia'),
