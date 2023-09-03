@@ -86,28 +86,32 @@
           zlib
         ];
       };
-    in {
-      devShells = {
-        default = devShell;
-        inherit devShell;
-      };
+    in
+      {
+        devShells = {
+          default = devShell;
+          inherit devShell;
+        };
 
-      packages = rec {
-        default = nvim-plugin;
-        inherit docgen;
-        inherit
-          (pkgs)
-          nvim-plugin
-          ;
-      };
+        packages = rec {
+          default = haskell-snippets-nvim;
+          inherit docgen;
+          inherit
+            (pkgs)
+            haskell-snippets-nvim
+            ;
+        };
 
-      checks = {
-        formatting = pre-commit-check;
-        inherit
-          (pkgs)
-          nvim-stable-tests
-          nvim-nightly-tests
-          ;
-      };
-    });
+        checks = {
+          formatting = pre-commit-check;
+          inherit
+            (pkgs)
+            nvim-stable-tests
+            nvim-nightly-tests
+            ;
+        };
+      }
+      // {
+        overlays.default = plugin-overlay;
+      });
 }
