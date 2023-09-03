@@ -38,6 +38,10 @@
   }: let
     name = "haskell-snippets.nvim";
 
+    plugin-overlay = import ./nix/plugin-overlay.nix {
+      inherit name self;
+    };
+
     supportedSystems = [
       "aarch64-linux"
       "aarch64-darwin"
@@ -51,10 +55,6 @@
           self
           plenary-nvim
           ;
-      };
-
-      plugin-overlay = import ./nix/plugin-overlay.nix {
-        inherit name self;
       };
 
       pkgs = import nixpkgs {
@@ -86,32 +86,31 @@
           zlib
         ];
       };
-    in
-      {
-        devShells = {
-          default = devShell;
-          inherit devShell;
-        };
+    in {
+      devShells = {
+        default = devShell;
+        inherit devShell;
+      };
 
-        packages = rec {
-          default = haskell-snippets-nvim;
-          inherit docgen;
-          inherit
-            (pkgs)
-            haskell-snippets-nvim
-            ;
-        };
+      packages = rec {
+        default = haskell-snippets-nvim;
+        inherit docgen;
+        inherit
+          (pkgs)
+          haskell-snippets-nvim
+          ;
+      };
 
-        checks = {
-          formatting = pre-commit-check;
-          inherit
-            (pkgs)
-            nvim-stable-tests
-            nvim-nightly-tests
-            ;
-        };
-      }
-      // {
-        overlays.default = plugin-overlay;
-      });
+      checks = {
+        formatting = pre-commit-check;
+        inherit
+          (pkgs)
+          nvim-stable-tests
+          nvim-nightly-tests
+          ;
+      };
+    })
+    // {
+      overlays.default = plugin-overlay;
+    };
 }
