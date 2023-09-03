@@ -28,7 +28,7 @@ with final.stdenv; let
         '';
         packages.myVimPackage = {
           start = with final.pkgs.vimPlugins; [
-            final.nvim-plugin
+            final.haskell-snippets-nvim
             plenary-plugin
             luasnip
             nvim-treesitter-plugin
