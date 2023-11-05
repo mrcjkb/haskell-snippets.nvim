@@ -24,7 +24,8 @@ local choice = ls.choice_node
 local dynamic = ls.dynamic_node
 
 local has_treesitter, parsers = pcall(require, 'nvim-treesitter.parsers')
-local hs_lang = has_treesitter and parsers.ft_to_lang('haskell')
+local hs_lang = has_treesitter and parsers.ft_to_lang('haskell') or 'haskell'
+local has_haskell_parser = pcall(vim.treesitter.get_string_parser, '', 'haskell')
 
 local function get_module_name_node()
   local module_name = util.lsp_get_module_name()
@@ -77,7 +78,7 @@ local function get_qualified_name_node(args)
   end
   local import_stmt = 'import qualified ' .. module_name
   local choices = { insert(1) }
-  if hs_lang then
+  if has_haskell_parser then
     local module_query = vim.treesitter.query.parse(hs_lang, '(module) @mod')
     local lang_tree = vim.treesitter.get_string_parser(import_stmt, hs_lang, { injections = { [hs_lang] = '' } })
     local root = fast_parse(lang_tree):root()

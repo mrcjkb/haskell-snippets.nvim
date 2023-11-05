@@ -49,7 +49,8 @@ Use luarocks or your favourite plugin manager.
 - [`haskell-language-server`](https://haskell-language-server.readthedocs.io/en/latest/installation.html)
   and [`haskell-tools.nvim`](https://github.com/mrcjkb/haskell-tools.nvim)
   (some snippets work better with LSP).
-- [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
+- A Haskell tree-sitter parser or
+  [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
   and the parser for haskell.
 
 ## Quick setup
