@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Health checks.
 - Use tree-sitter if the parser for Haskell is installed,
   without requiring the nvim-treesitter plugin.
 
