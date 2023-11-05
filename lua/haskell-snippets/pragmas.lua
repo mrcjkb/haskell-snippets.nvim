@@ -42,7 +42,16 @@ pragmas.prag = s({
     }),
     sn(nil, {
       text('OPTIONS_GHC '),
-      insert(1),
+      choice(1, {
+        insert(1),
+        sn(nil, {
+          text('-Wno-'),
+          choice(1, {
+            insert(1),
+            text('deprecations'),
+          }),
+        }),
+      }),
       text(' #-}'),
     }),
     sn(nil, {
@@ -126,6 +135,7 @@ pragmas.nowarn = s({
 }, {
   text('{-# OPTIONS_GHC -fno-warn-'),
   choice(1, {
+    text('deprecations'),
     text('orphans'),
     text('unused-binds'),
     text('unused-matches'),
