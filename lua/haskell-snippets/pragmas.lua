@@ -33,12 +33,10 @@ pragmas.prag = s({
   choice(1, {
     sn(nil, {
       insert(1),
-      text(' #-}'),
     }),
     sn(nil, {
       text('LANGUAGE '),
       insert(1),
-      text(' #-}'),
     }),
     sn(nil, {
       text('OPTIONS_GHC '),
@@ -52,29 +50,25 @@ pragmas.prag = s({
           }),
         }),
       }),
-      text(' #-}'),
     }),
     sn(nil, {
       text('OPTIONS_GHC -F -pgmF '),
       insert(1),
-      text(' #-}'),
     }),
     sn(nil, {
       text('INLINE '),
       insert(1),
-      text(' #-}'),
     }),
     sn(nil, {
       text('INLINABLE '),
       insert(1),
-      text(' #-}'),
     }),
     sn(nil, {
       text('NOINLINE '),
       insert(1),
-      text(' #-}'),
     }),
   }),
+	text(' #-}'),
 })
 table.insert(pragmas.all, pragmas.prag)
 
