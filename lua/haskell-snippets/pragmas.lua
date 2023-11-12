@@ -15,6 +15,141 @@ local pragmas = {
   all = {},
 }
 
+--- List of language extensions fetched from
+--- https://downloads.haskell.org/ghc/latest/docs/users_guide/exts/table.html as
+--- of 2023-11-11.
+---
+---@type string[]
+local language_extensions = {
+  'AllowAmbiguousTypes',
+  'ApplicativeDo',
+  'Arrows',
+  'BangPatterns',
+  'BinaryLiterals',
+  'BlockArguments',
+  'CApiFFI',
+  'ConstrainedClassMethods',
+  'ConstraintKinds',
+  'CPP',
+  'CUSKs',
+  'DataKinds',
+  'DatatypeContexts',
+  'DeepSubsumption',
+  'DefaultSignatures',
+  'DeriveAnyClass',
+  'DeriveDataTypeable',
+  'DeriveFoldable',
+  'DeriveFunctor',
+  'DeriveGeneric',
+  'DeriveLift',
+  'DeriveTraversable',
+  'DerivingStrategies',
+  'DerivingVia',
+  'DisambiguateRecordFields',
+  'DuplicateRecordFields',
+  'EmptyCase',
+  'EmptyDataDecls',
+  'EmptyDataDeriving',
+  'ExistentialQuantification',
+  'ExplicitForAll',
+  'ExplicitNamespaces',
+  'ExtendedDefaultRules',
+  'ExtendedLiterals',
+  'FieldSelectors',
+  'FlexibleContexts',
+  'FlexibleInstances',
+  'ForeignFunctionInterface',
+  'FunctionalDependencies',
+  'GADTs',
+  'GADTSyntax',
+  'GeneralisedNewtypeDeriving',
+  'GHC2021',
+  'GHCForeignImportPrim',
+  'Haskell2010',
+  'Haskell98',
+  'HexFloatLiterals',
+  'ImplicitParams',
+  'ImplicitPrelude',
+  'ImportQualifiedPost',
+  'ImpredicativeTypes',
+  'IncoherentInstances',
+  'InstanceSigs',
+  'InterruptibleFFI',
+  'KindSignatures',
+  'LambdaCase',
+  'LexicalNegation',
+  'LiberalTypeSynonyms',
+  'LinearTypes',
+  'MagicHash',
+  'MonadComprehensions',
+  'MonoLocalBinds',
+  'MonomorphismRestriction',
+  'MultiParamTypeClasses',
+  'MultiWayIf',
+  'NamedFieldPuns',
+  'NamedWildCards',
+  'NegativeLiterals',
+  'NondecreasingIndentation',
+  'NPlusKPatterns',
+  'NullaryTypeClasses',
+  'NumDecimals',
+  'NumericUnderscores',
+  'OverlappingInstances',
+  'OverloadedLabels',
+  'OverloadedLists',
+  'OverloadedRecordDot',
+  'OverloadedRecordUpdate',
+  'OverloadedStrings',
+  'PackageImports',
+  'ParallelListComp',
+  'PartialTypeSignatures',
+  'PatternGuards',
+  'PatternSynonyms',
+  'PolyKinds',
+  'PostfixOperators',
+  'QualifiedDo',
+  'QuantifiedConstraints',
+  'QuasiQuotes',
+  'Rank2Types',
+  'RankNTypes',
+  'RebindableSyntax',
+  'RecordWildCards',
+  'RecursiveDo',
+  'RoleAnnotations',
+  'Safe',
+  'ScopedTypeVariables',
+  'StandaloneDeriving',
+  'StandaloneKindSignatures',
+  'StarIsType',
+  'StaticPointers',
+  'Strict',
+  'StrictData',
+  'TemplateHaskell',
+  'TemplateHaskellQuotes',
+  'TraditionalRecordSyntax',
+  'TransformListComp',
+  'Trustworthy',
+  'TupleSections',
+  'TypeAbstractions',
+  'TypeApplications',
+  'TypeData',
+  'TypeFamilies',
+  'TypeFamilyDependencies',
+  'TypeInType',
+  'TypeOperators',
+  'TypeSynonymInstances',
+  'UnboxedSums',
+  'UnboxedTuples',
+  'UndecidableInstances',
+  'UndecidableSuperClasses',
+  'UnicodeSyntax',
+  'UnliftedDatatypes',
+  'UnliftedFFITypes',
+  'UnliftedNewtypes',
+  'Unsafe',
+  'ViewPatterns',
+}
+
 local ls = require('luasnip')
 local s = ls.snippet
 local sn = ls.snippet_node
@@ -25,6 +160,16 @@ local dynamic = ls.dynamic_node
 
 local util = require('haskell-snippets.util')
 
+-- This needs to be a function, because LuaSnip's functions modify the input
+-- structures in place. We need to ensure that every time we use this
+-- structure, we have a fresh copy.
+local function language_extension_interior_snippet()
+  return sn(1, {
+    text('LANGUAGE '),
+    choice(1, vim.list_extend({ insert(1) }, vim.tbl_map(text, language_extensions))),
+  })
+end
+
 pragmas.prag = s({
   trig = 'prag',
   dscr = 'Compiler pragma',
@@ -33,13 +178,8 @@ pragmas.prag = s({
   choice(1, {
     sn(nil, {
       insert(1),
-      text(' #-}'),
     }),
-    sn(nil, {
-      text('LANGUAGE '),
-      insert(1),
-      text(' #-}'),
-    }),
+    language_extension_interior_snippet(),
     sn(nil, {
       text('OPTIONS_GHC '),
       choice(1, {
@@ -52,29 +192,25 @@ pragmas.prag = s({
           }),
         }),
       }),
-      text(' #-}'),
     }),
     sn(nil, {
       text('OPTIONS_GHC -F -pgmF '),
       insert(1),
-      text(' #-}'),
     }),
     sn(nil, {
       text('INLINE '),
       insert(1),
-      text(' #-}'),
     }),
     sn(nil, {
       text('INLINABLE '),
       insert(1),
-      text(' #-}'),
     }),
     sn(nil, {
       text('NOINLINE '),
       insert(1),
-      text(' #-}'),
     }),
   }),
+  text(' #-}'),
 })
 table.insert(pragmas.all, pragmas.prag)
 
@@ -82,22 +218,8 @@ pragmas.lang = s({
   trig = 'lang',
   dscr = 'LANGUAGE pragma',
 }, {
-  text('{-# LANGUAGE '),
-  choice(1, {
-    insert(1),
-    text('ScopedTypeVariables'),
-    text('RecordWildCards'),
-    text('LambdaCase'),
-    text('QuasiQuotes'),
-    text('ViewPatterns'),
-    text('DerivingVia'),
-    text('DeriveAnyClass'),
-    text('DeriveGeneric'),
-    text('MultiParamTypeClasses'),
-    text('TypeFamilies'),
-    text('DataKinds'),
-    text('OverloadedLists'),
-  }),
+  text('{-# '),
+  language_extension_interior_snippet(),
   text(' #-}'),
 })
 table.insert(pragmas.all, pragmas.lang)
