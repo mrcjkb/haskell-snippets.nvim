@@ -66,13 +66,13 @@ local haskell_snippets = require('haskell-snippets').all
 ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 ```
 
-> **Note**
+> [!NOTE]
 >
 > See also `:h haskell-snippets`
 
 ## Snippets
 
-> **Note**
+> [!NOTE]
 >
 > - The recording software [ttyrec](https://github.com/mjording/ttyrec)
 >   sometimes has some visual glitches.
