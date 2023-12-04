@@ -195,6 +195,10 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 ![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/8d0fbfeb-00c2-4644-b7a4-9d5993a852ea)
 
+#### `haskell-snippets.expressions.if_expr_multiway`
+
+- Trigger: `ifmw`
+
 #### `haskell-snippets.expressions.lambdacase`
 
 - Trigger: `\case`
