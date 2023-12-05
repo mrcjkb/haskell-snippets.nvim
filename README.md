@@ -199,6 +199,8 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 - Trigger: `ifmw`
 
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/5932ae6b-8f02-43b1-b621-eb19268750c2)
+
 #### `haskell-snippets.expressions.lambdacase`
 
 - Trigger: `\case`
