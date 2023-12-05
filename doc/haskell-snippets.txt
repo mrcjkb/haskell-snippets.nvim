@@ -87,6 +87,7 @@ ExpressionSnippetCollection                        *ExpressionSnippetCollection*
     Fields: ~
         {if_expr}            (Snippet)  if expression
         {if_expr_multiline}  (Snippet)  if expression (multi-line)
+        {if_expr_multiway}   (Snippet)  if expression (multi-way)
         {case}               (Snippet)  case expression (pattern match)
         {lambdacase}         (Snippet)  lambda case (pattern match)
 

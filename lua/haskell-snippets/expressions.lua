@@ -7,6 +7,7 @@
 ---@class ExpressionSnippetCollection
 ---@field if_expr Snippet if expression
 ---@field if_expr_multiline Snippet if expression (multi-line)
+---@field if_expr_multiway Snippet if expression (multi-way)
 ---@field case Snippet case expression (pattern match)
 ---@field lambdacase Snippet lambda case (pattern match)
 
@@ -48,6 +49,24 @@ expressions.if_expr_multiline = s({
   insert(5),
 })
 table.insert(expressions.all, expressions.if_expr_multiline)
+
+expressions.if_expr_multiway = s({
+  trig = 'ifmw',
+  dscr = 'If expression (multi-way)',
+}, {
+  text('if '),
+  dynamic(1, util.indent_newline_text('| ')),
+  insert(2),
+  text(' -> '),
+  insert(3),
+  dynamic(4, util.indent_newline_text('| ')),
+  insert(5),
+  text(' -> '),
+  insert(6),
+  dynamic(7, util.indent_newline_text('| otherwise -> ')),
+  insert(8),
+})
+table.insert(expressions.all, expressions.if_expr_multiway)
 
 expressions.case = s({
   trig = 'case',
