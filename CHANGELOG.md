@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Expressions: Add multi-way if snippet (`ifmw`).
+- Expressions: Add multi-way if snippet (`ifmw`) [[#16](https://github.com/mrcjkb/haskell-snippets.nvim/pull/16)].
+  Thanks [@gregorias](https://github.com/gregorias)!
 
 ## [1.2.0] - 2023-11-12
 
