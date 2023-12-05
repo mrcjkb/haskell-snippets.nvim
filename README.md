@@ -26,6 +26,7 @@
 [![GPL2 License][license-shield]][license-url]
 [![Issues][issues-shield]][issues-url]
 [![Build Status][ci-shield]][ci-url]
+[![LuaRocks][luarocks-shield]][luarocks-url]
 
 ## Quick Links
 
@@ -266,3 +267,5 @@ Here are some other plugins I recommend for Haskell development:
 [license-url]: https://github.com/mrcjkb/haskell-snippets.nvim/blob/master/LICENSE
 [ci-shield]: https://img.shields.io/github/actions/workflow/status/mrcjkb/haskell-snippets.nvim/nix-build.yml?style=for-the-badge
 [ci-url]: https://github.com/mrcjkb/haskell-snippets.nvim/actions/workflows/nix-build.yml
+[luarocks-shield]: https://img.shields.io/luarocks/v/MrcJkb/haskell-snippets.nvim?logo=lua&color=purple&style=for-the-badge
+[luarocks-url]: https://luarocks.org/modules/MrcJkb/haskell-snippets.nvim
