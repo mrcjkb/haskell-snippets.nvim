@@ -16,6 +16,9 @@ jobs:
         uses: nvim-neorocks/luarocks-tag-release@v5
         env:
           LUAROCKS_API_KEY: ${{ secrets.LUAROCKS_API_KEY }}
+        with:
+          dependencies: |
+            LuaSnip
       - name: Fail if changelog entry does not exist
         run: grep -q "${{ github.ref_name }}" CHANGELOG.md
       - name: GitHub release
