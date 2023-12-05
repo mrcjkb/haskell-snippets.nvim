@@ -29,11 +29,29 @@ HaskellSnippetCollection                              *HaskellSnippetCollection*
 
 PragmaSnippetCollection                                *PragmaSnippetCollection*
 
-    Fields: ~
-        {prag}      (Snippet)  Compiler pragma
-        {lang}      (Snippet)  Language pragma
-        {discover}  (Snippet)  Hspec/Sydtest discover GHC option
-        {nowarn}    (Snippet)  GHC option
+
+pragmas.prag                                                      *pragmas.prag*
+
+    Type: ~
+        (Snippet)  Compiler pragma
+
+
+pragmas.lang                                                      *pragmas.lang*
+
+    Type: ~
+        (Snippet)  Language pragma
+
+
+pragmas.discover                                              *pragmas.discover*
+
+    Type: ~
+        (Snippet)  Hspec/Sydtest discover GHC option
+
+
+pragmas.nowarn                                                  *pragmas.nowarn*
+
+    Type: ~
+        (Snippet)  GHC option
 
 
 ==============================================================================
@@ -43,9 +61,29 @@ PragmaSnippetCollection                                *PragmaSnippetCollection*
 
 ModuleSnippetCollection                                *ModuleSnippetCollection*
 
-    Fields: ~
-        {mod}   (Snippet)  Module declaration
-        {qual}  (Snippet)  Qualified import
+
+module.mod                                                          *module.mod*
+
+    Type: ~
+        (Snippet)  Module declaration
+
+
+module.qual                                                        *module.qual*
+
+    Type: ~
+        (Snippet)  Qualified import
+
+
+module.impc                                                        *module.impc*
+
+    Type: ~
+        (Snippet|nil)  Import (child module)
+
+
+module.qualc                                                      *module.qualc*
+
+    Type: ~
+        (Snippet|nil)  Qualified import (child module)
 
 
 ==============================================================================
@@ -55,13 +93,41 @@ ModuleSnippetCollection                                *ModuleSnippetCollection*
 
 DataSnippetCollection                                    *DataSnippetCollection*
 
-    Fields: ~
-        {adt}         (Snippet)  Algebraic data type
-        {newtype}     (Snippet)  newtype
-        {rec}         (Snippet)  Record
-        {cls}         (Snippet)  Typeclass
-        {ins}         (Snippet)  Typeclass instance
-        {constraint}  (Snippet)  Typeclass constraint
+
+data.adt                                                              *data.adt*
+
+    Type: ~
+        (Snippet)  Algebraic data type
+
+
+data.newtype                                                      *data.newtype*
+
+    Type: ~
+        (Snippet)  newtype
+
+
+data.rec                                                              *data.rec*
+
+    Type: ~
+        (Snippet)  Record
+
+
+data.cls                                                              *data.cls*
+
+    Type: ~
+        (Snippet)  Typeclass
+
+
+data.ins                                                              *data.ins*
+
+    Type: ~
+        (Snippet)  Typeclass instance
+
+
+data.constraint                                                *data.constraint*
+
+    Type: ~
+        (Snippet)  Typeclass constraint
 
 
 ==============================================================================
@@ -71,10 +137,23 @@ DataSnippetCollection                                    *DataSnippetCollection*
 
 FunctionSnippetCollection                            *FunctionSnippetCollection*
 
-    Fields: ~
-        {fun}     (Snippet)  Function and type signature
-        {func}    (Snippet)  Function and type signature (multi-line)
-        {lambda}  (Snippet)  Lambda
+
+functions.fn                                                      *functions.fn*
+
+    Type: ~
+        (Snippet)  Function and type signature
+
+
+functions.func                                                  *functions.func*
+
+    Type: ~
+        (Snippet)  Function and type signature (multi-line)
+
+
+functions.lambda                                              *functions.lambda*
+
+    Type: ~
+        (Snippet)  Lambda
 
 
 ==============================================================================
@@ -84,12 +163,35 @@ FunctionSnippetCollection                            *FunctionSnippetCollection*
 
 ExpressionSnippetCollection                        *ExpressionSnippetCollection*
 
-    Fields: ~
-        {if_expr}            (Snippet)  if expression
-        {if_expr_multiline}  (Snippet)  if expression (multi-line)
-        {if_expr_multiway}   (Snippet)  if expression (multi-way)
-        {case}               (Snippet)  case expression (pattern match)
-        {lambdacase}         (Snippet)  lambda case (pattern match)
+
+expressions.if_expr                                        *expressions.if_expr*
+
+    Type: ~
+        (Snippet)  if expression
+
+
+expressions.if_expr_multiline                    *expressions.if_expr_multiline*
+
+    Type: ~
+        (Snippet)  if expression (multi-line)
+
+
+expressions.if_expr_multiway                      *expressions.if_expr_multiway*
+
+    Type: ~
+        (Snippet)  if expression (multi-way)
+
+
+expressions.case                                              *expressions.case*
+
+    Type: ~
+        (Snippet)  case expression (pattern match)
+
+
+expressions.lambdacase                                  *expressions.lambdacase*
+
+    Type: ~
+        (Snippet)  lambda case (pattern match)
 
 
 ==============================================================================
@@ -99,9 +201,17 @@ ExpressionSnippetCollection                        *ExpressionSnippetCollection*
 
 QuasiQuoteSnippetCollection                        *QuasiQuoteSnippetCollection*
 
-    Fields: ~
-        {qq}   (Snippet)  QuasiQuote
-        {sql}  (Snippet)  postgres-simple [sql||] QuasiQuote
+
+quasiquotes.qq                                                  *quasiquotes.qq*
+
+    Type: ~
+        (Snippet)  QuasiQuote
+
+
+quasiquotes.sql                                                *quasiquotes.sql*
+
+    Type: ~
+        (Snippet)  postgres-simple [sql||] QuasiQuote
 
 
 vim:tw=78:ts=8:noet:ft=help:norl:
