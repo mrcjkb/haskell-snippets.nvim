@@ -8,11 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.4.0] - 2023-12-05
 
+### Added
+
 - Module imports:
   - `qualc` snippet for qualified import of child modules.
   - `impc` snippet for unqualified import of child modules.
 
 ## [1.3.0] - 2023-12-05
+
+### Added
 
 - Expressions: Add multi-way if snippet (`ifmw`) [[#16](https://github.com/mrcjkb/haskell-snippets.nvim/pull/16)].
   Thanks [@gregorias](https://github.com/gregorias)!
