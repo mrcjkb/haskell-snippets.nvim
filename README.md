@@ -119,6 +119,20 @@ ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 ![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/c62eac49-e06c-4ed9-9a9c-b987c1ad498c)
 
+#### `haskell-snippets.module.impc`
+
+- Trigger: `impc`
+- Requires a tree-sitter parser for Haskell.
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/6ffc5f2f-c734-4e48-ac13-99ba1f9a0b18)
+
+#### `haskell-snippets.module.qualc`
+
+- Trigger: `qualc`
+- Requires a tree-sitter parser for Haskell.
+
+![tty](https://github.com/mrcjkb/haskell-snippets.nvim/assets/12857160/43cef52f-eeda-48ad-bb2d-86241ac715b2)
+
 ### Data and typeclasses
 
 #### `haskell-snippets.data.adt`

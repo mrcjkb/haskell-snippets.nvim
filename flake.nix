@@ -82,8 +82,13 @@
       devShell = pkgs.mkShell {
         name = "haskell-snippets-devShell";
         inherit (pre-commit-check) shellHook;
-        buildInputs = with pkgs; [
-          zlib
+        buildInputs = with pre-commit-hooks.packages.${system}; [
+          alejandra
+          lua-language-server
+          stylua
+          luacheck
+          editorconfig-checker
+          markdownlint-cli
         ];
       };
     in {

@@ -5,14 +5,8 @@
 ---@brief ]]
 
 ---@class ExpressionSnippetCollection
----@field if_expr Snippet if expression
----@field if_expr_multiline Snippet if expression (multi-line)
----@field if_expr_multiway Snippet if expression (multi-way)
----@field case Snippet case expression (pattern match)
----@field lambdacase Snippet lambda case (pattern match)
-
----@type ExpressionSnippetCollection
 local expressions = {
+  ---@type Snippet[] All expression-related snippets
   all = {},
 }
 
@@ -24,6 +18,7 @@ local text = ls.text_node
 local insert = ls.insert_node
 local dynamic = ls.dynamic_node
 
+---@type Snippet if expression
 expressions.if_expr = s({
   trig = 'if',
   dscr = 'If expression (single line)',
@@ -37,6 +32,7 @@ expressions.if_expr = s({
 })
 table.insert(expressions.all, expressions.if_expr)
 
+---@type Snippet if expression (multi-line)
 expressions.if_expr_multiline = s({
   trig = 'iff',
   dscr = 'If expression (multi lines)',
@@ -50,6 +46,7 @@ expressions.if_expr_multiline = s({
 })
 table.insert(expressions.all, expressions.if_expr_multiline)
 
+---@type Snippet if expression (multi-way)
 expressions.if_expr_multiway = s({
   trig = 'ifmw',
   dscr = 'If expression (multi-way)',
@@ -68,6 +65,7 @@ expressions.if_expr_multiway = s({
 })
 table.insert(expressions.all, expressions.if_expr_multiway)
 
+---@type Snippet case expression (pattern match)
 expressions.case = s({
   trig = 'case',
   dscr = 'Case expression (pattern match)',
@@ -84,6 +82,7 @@ expressions.case = s({
 })
 table.insert(expressions.all, expressions.case)
 
+---@type Snippet lambda case (pattern match)
 expressions.lambdacase = s({
   trig = '\\case',
   dscr = 'Lambda (pattern match)',

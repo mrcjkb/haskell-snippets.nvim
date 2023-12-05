@@ -5,12 +5,8 @@
 ---@brief ]]
 
 ---@class FunctionSnippetCollection
----@field fun Snippet Function and type signature
----@field func Snippet Function and type signature (multi-line)
----@field lambda Snippet Lambda
-
----@type FunctionSnippetCollection
 local functions = {
+  ---@type Snippet[] All function-related snippets
   all = {},
 }
 
@@ -81,6 +77,7 @@ local function build_multi_line_function_snippet(...)
   return build_function_snippet(true, ...)
 end
 
+---@type Snippet Function and type signature
 functions.fn = s({
   trig = 'fn',
   dscr = 'Function and type signature',
@@ -91,6 +88,7 @@ functions.fn = s({
 })
 table.insert(functions.all, functions.fn)
 
+---@type Snippet Function and type signature (multi-line)
 functions.func = s({
   trig = 'func',
   dscr = 'Function and type signature (multi-line)',
@@ -103,6 +101,7 @@ functions.func = s({
 })
 table.insert(functions.all, functions.func)
 
+---@type Snippet Lambda
 functions.lambda = s({
   trig = '\\',
   dscr = 'Lambda',

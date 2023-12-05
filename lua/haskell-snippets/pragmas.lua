@@ -5,13 +5,8 @@
 ---@brief ]]
 
 ---@class PragmaSnippetCollection
----@field prag Snippet Compiler pragma
----@field lang Snippet Language pragma
----@field discover Snippet Hspec/Sydtest discover GHC option
----@field nowarn Snippet GHC option
-
----@type PragmaSnippetCollection
 local pragmas = {
+  ---@type Snippet[] All pragma-related snippets
   all = {},
 }
 
@@ -170,6 +165,7 @@ local function language_extension_interior_snippet()
   })
 end
 
+---@type Snippet Compiler pragma
 pragmas.prag = s({
   trig = 'prag',
   dscr = 'Compiler pragma',
@@ -214,6 +210,7 @@ pragmas.prag = s({
 })
 table.insert(pragmas.all, pragmas.prag)
 
+---@type Snippet Language pragma
 pragmas.lang = s({
   trig = 'lang',
   dscr = 'LANGUAGE pragma',
@@ -236,6 +233,7 @@ local function get_module_name()
   })
 end
 
+---@type Snippet Hspec/Sydtest discover GHC option
 pragmas.discover = s({
   trig = 'discover',
   dscr = 'hspec/sydtest discover GHC option',
@@ -251,6 +249,7 @@ pragmas.discover = s({
 })
 table.insert(pragmas.all, pragmas.discover)
 
+---@type Snippet GHC option
 pragmas.nowarn = s({
   trig = 'nowarn',
   dscr = 'GHC option to disable warnings',

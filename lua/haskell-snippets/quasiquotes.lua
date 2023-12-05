@@ -5,11 +5,8 @@
 ---@brief ]]
 
 ---@class QuasiQuoteSnippetCollection
----@field qq Snippet QuasiQuote
----@field sql Snippet postgres-simple [sql||] QuasiQuote
-
----@type QuasiQuoteSnippetCollection
 local quasiquotes = {
+  ---@type Snippet[] All quasiquote-related snippets
   all = {},
 }
 
@@ -21,6 +18,7 @@ local dynamic = ls.dynamic_node
 
 local util = require('haskell-snippets.util')
 
+---@type Snippet QuasiQuote
 quasiquotes.qq = s({
   trig = 'qq',
   dscr = 'QuasiQuote',
@@ -34,6 +32,7 @@ quasiquotes.qq = s({
 })
 table.insert(quasiquotes.all, quasiquotes.qq)
 
+---@type Snippet postgres-simple [sql||] QuasiQuote
 quasiquotes.sql = s({
   trig = 'sql',
   dscr = 'postgres-simple sql QuasiQuote',

@@ -5,15 +5,8 @@
 ---@brief ]]
 
 ---@class DataSnippetCollection
----@field adt Snippet Algebraic data type
----@field newtype Snippet newtype
----@field rec Snippet Record
----@field cls Snippet Typeclass
----@field ins Snippet Typeclass instance
----@field constraint Snippet Typeclass constraint
-
----@type DataSnippetCollection
 local data = {
+  ---@type Snippet[] All data-related snippets
   all = {},
 }
 
@@ -44,6 +37,7 @@ adt_constructor_choice = function()
   })
 end
 
+---@type Snippet Algebraic data type
 data.adt = s({
   trig = 'adt',
   dscr = 'Algebraic data type',
@@ -71,6 +65,7 @@ data.adt = s({
 })
 table.insert(data.all, data.adt)
 
+---@type Snippet newtype
 data.newtype = s({
   trig = 'new',
   dscr = 'newtype',
@@ -116,6 +111,7 @@ record_field_choice = function()
   })
 end
 
+---@type Snippet Record
 data.rec = s({
   trig = 'rec',
   dscr = 'Record',
@@ -160,6 +156,7 @@ data.rec = s({
 })
 table.insert(data.all, data.rec)
 
+---@type Snippet Typeclass
 data.cls = s({
   trig = 'cls',
   dscr = 'Typeclass',
@@ -173,6 +170,7 @@ data.cls = s({
 })
 table.insert(data.all, data.cls)
 
+---@type Snippet Typeclass instance
 data.ins = s({
   trig = 'ins',
   dscr = 'Typeclass instance',
@@ -188,6 +186,7 @@ data.ins = s({
 })
 table.insert(data.all, data.ins)
 
+---@type Snippet Typeclass constraint
 data.constraint = s({
   trig = '=>',
   descr = 'Typeclass constraint',
