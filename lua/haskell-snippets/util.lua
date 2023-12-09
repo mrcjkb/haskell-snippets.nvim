@@ -73,7 +73,11 @@ local get_clients = vim.lsp.get_clients or vim.lsp.get_active_clients
 function util.lsp_get_module_name()
   if #get_clients { bufnr = 0 } > 0 then
     for _, lens in pairs(vim.lsp.codelens.get(0)) do
-      local name = lens.command.title:match('module (.*) where')
+      -- Strings to match taken from the module name plugin:
+      -- https://github.com/haskell/haskell-language-server/blob/f0c16469046bd554828ea057b5e1f047ad02348e/plugins/hls-module-name-plugin/src/Ide/Plugin/ModuleName.hs#L129-L136
+      local name_module_decl_absent = lens.command.title:match('module (.*) where')
+      local name_module_decl_present = lens.command.title:match('Set module name to (.*)')
+      local name = name_module_decl_absent or name_module_decl_present
       if name then
         return name
       end
