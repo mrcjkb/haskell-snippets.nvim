@@ -35,7 +35,7 @@ local function fast_parse(lang_tree)
   return parser:parse(old_trees[1], lang_tree._source)
 end
 
----@param apply fun(module_name: string):(string|nil) Callback to apply the module name to
+---@param apply fun(module_name: string):(string|nil) Callback to apply the module name to. If the callback returns, this function returns.
 ---@param content string The content to parse from
 ---@param query_string? string The tree-sitter query string with a '@mod' capture
 ---@return string|nil
@@ -48,8 +48,11 @@ local function treesitter_module_name(apply, content, query_string)
   ---@diagnostic disable-next-line
   for _, match in module_query:iter_matches(root, content) do
     for _, node in ipairs(match) do
-      local txt = vim.treesitter.get_node_text(node, content)
-      return apply(txt)
+      local txt = vim.print(vim.treesitter.get_node_text(node, content))
+      local result = apply(txt)
+      if result then
+        return result
+      end
     end
   end
 end
@@ -58,7 +61,7 @@ end
 local function get_buf_module_name(_)
   local buf_content = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), '\n')
   return treesitter_module_name(function(mod)
-    return vim.print(mod)
+    return mod
   end, buf_content, '[(module)(qualified_module)] @mod')
 end
 
@@ -106,7 +109,6 @@ local function get_qualified_name_node(args)
   local choices = { insert(1) }
   if has_haskell_parser then
     treesitter_module_name(function(mod)
-      vim.print(mod)
       table.insert(choices, 1, text(mod:sub(1, 1)))
       table.insert(choices, 1, text(mod))
     end, import_stmt)
