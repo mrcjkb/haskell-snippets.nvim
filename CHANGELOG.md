@@ -6,6 +6,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.4] - 2024-05-13
+
+### Fixed
+
+- Updated tree-sitter queries to be compatible with the
+  tree-sitter-haskell v0.21.0 rewrite.
+  Because there are not many queries, this plugin maintains backward
+  compatibility with the previous tree-sitter-haskell implementation for now.
+
 ## [1.4.3] - 2023-12-15
 
 ### Fixed
