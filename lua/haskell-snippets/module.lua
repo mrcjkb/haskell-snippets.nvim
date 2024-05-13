@@ -37,12 +37,15 @@ end
 
 ---@param apply fun(module_name: string):(string|nil) Callback to apply the module name to. If the callback returns, this function returns.
 ---@param content string The content to parse from
----@param query_string? string The tree-sitter query string with a '@mod' capture
+---@param query_string string The tree-sitter query string with a '@mod' capture (v0.21.0 rewrite)
+---@param legacy_query_string string The legacy tree-sitter query string with a '@mod' capture
 ---@return string|nil
-local function treesitter_module_name(apply, content, query_string)
+local function treesitter_module_name(apply, content, query_string, legacy_query_string)
   assert(has_haskell_parser, 'No tree-sitter parser for Haskell found.')
-  query_string = query_string or '(module) @mod'
-  local module_query = vim.treesitter.query.parse(hs_lang, query_string)
+  local ok, module_query = pcall(vim.treesitter.query.parse, hs_lang, query_string)
+  if not ok then
+    module_query = vim.treesitter.query.parse(hs_lang, legacy_query_string)
+  end
   local lang_tree = vim.treesitter.get_string_parser(content, hs_lang, { injections = { [hs_lang] = '' } })
   local root = fast_parse(lang_tree):root()
   ---@diagnostic disable-next-line
@@ -62,7 +65,7 @@ local function get_buf_module_name(_)
   local buf_content = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), '\n')
   return treesitter_module_name(function(mod)
     return mod
-  end, buf_content, '[(module)(qualified_module)] @mod')
+  end, buf_content, '(haskell (header module: (module) @mod))', '(haskell module: (module) @mod)')
 end
 
 local function get_module_name_node()
@@ -111,7 +114,7 @@ local function get_qualified_name_node(args)
     treesitter_module_name(function(mod)
       table.insert(choices, 1, text(mod:sub(1, 1)))
       table.insert(choices, 1, text(mod))
-    end, import_stmt)
+    end, import_stmt, '(module_id) @mod', '(module) @mod')
   end
   return sn(nil, {
     choice(1, choices),
