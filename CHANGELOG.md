@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   tree-sitter-haskell v0.21.0 rewrite.
   Because there are not many queries, this plugin maintains backward
   compatibility with the previous tree-sitter-haskell implementation for now.
+- Don't use tree-sitter to get the module name for the `mod` snippet,
+  as this is most likely not set. Instead, use `<filename>:t:r`.
 
 ## [1.4.3] - 2023-12-15
 
