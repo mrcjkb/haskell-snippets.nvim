@@ -62,10 +62,7 @@ end
 
 ---@return string | nil
 local function get_buf_module_name(_)
-  local buf_content = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), '\n')
-  return treesitter_module_name(function(mod)
-    return mod
-  end, buf_content, '(haskell (header module: (module) @mod))', '(haskell module: (module) @mod)')
+  return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':t:r')
 end
 
 local function get_module_name_node()
