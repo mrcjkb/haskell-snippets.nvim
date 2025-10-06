@@ -21,9 +21,10 @@ local choice = ls.choice_node
 local dynamic = ls.dynamic_node
 local func = ls.function_node
 
-local has_treesitter, parsers = pcall(require, 'nvim-treesitter.parsers')
-local hs_lang = has_treesitter and parsers.ft_to_lang('haskell') or 'haskell'
-local has_haskell_parser = pcall(vim.treesitter.get_string_parser, '', 'haskell')
+---@type fun(ft: string): string? | nil
+local get_lang = vim.tbl_get(vim.treesitter, 'language', 'get_lang')
+local treesitter_haskell_lang_name = get_lang and get_lang('haskell') or 'haskell'
+local has_haskell_parser = pcall(vim.treesitter.get_string_parser, '', treesitter_haskell_lang_name)
 
 --- Parses without injections
 local function fast_parse(lang_tree)
@@ -42,11 +43,15 @@ end
 ---@return string|nil
 local function treesitter_module_name(apply, content, query_string, legacy_query_string)
   assert(has_haskell_parser, 'No tree-sitter parser for Haskell found.')
-  local ok, module_query = pcall(vim.treesitter.query.parse, hs_lang, query_string)
+  local ok, module_query = pcall(vim.treesitter.query.parse, treesitter_haskell_lang_name, query_string)
   if not ok then
-    module_query = vim.treesitter.query.parse(hs_lang, legacy_query_string)
+    module_query = vim.treesitter.query.parse(treesitter_haskell_lang_name, legacy_query_string)
   end
-  local lang_tree = vim.treesitter.get_string_parser(content, hs_lang, { injections = { [hs_lang] = '' } })
+  local lang_tree = vim.treesitter.get_string_parser(
+    content,
+    treesitter_haskell_lang_name,
+    { injections = { [treesitter_haskell_lang_name] = '' } }
+  )
   local root = fast_parse(lang_tree):root()
   ---@diagnostic disable-next-line
   for _, match in module_query:iter_matches(root, content) do
