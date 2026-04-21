@@ -42,12 +42,7 @@
       inherit name self;
     };
 
-    supportedSystems = [
-      "aarch64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
-      "x86_64-linux"
-    ];
+    supportedSystems = builtins.attrNames nixpkgs.legacyPackages;
   in
     flake-utils.lib.eachSystem supportedSystems (system: let
       ci-overlay = import ./nix/ci-overlay.nix {
